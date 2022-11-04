@@ -804,9 +804,26 @@ MARK input(MARK from, MARK to, int when, int delta)
 			  default:
 				if (cursor >= to && when != WHEN_VIREP)
 				{
-					add(cursor, key);
-					cursor++;
-					to = cursor;
+					if ((*key != 0x09) || (!(*o_expandtab))) {
+						add(cursor, key);
+						cursor++;
+						to = cursor;
+					}
+					else
+					{
+						int spaces = idx2col(cursor, ptext, TRUE) % (*o_tabstop);
+						if (spaces == 0)
+						{
+							spaces = *o_tabstop;
+						}
+						for (int i=0; i < spaces; i++) {
+							*key = 0x20;
+							add(cursor, key);
+							cursor++;
+						}
+						to = cursor;
+						redraw(cursor, TRUE);
+					}
 				}
 				else
 				{

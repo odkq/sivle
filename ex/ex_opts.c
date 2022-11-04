@@ -48,6 +48,7 @@
 char	o_autoindent[1] =	{FALSE};
 char	o_autoprint[1] =	{TRUE};
 char	o_autotab[1] =		{TRUE};
+char	o_expandtab[1] =	{FALSE};
 char	o_autowrite[1] = 	{FALSE};
 char	o_columns[3] =		{80, 32, ~0};
 char	o_directory[30] =	TMPDIR;
@@ -181,6 +182,7 @@ struct
 	{ "autoindent",	"ai",	BOOL,	CANSET,		o_autoindent	},
 	{ "autoprint",	"ap",	BOOL,	CANSET,		o_autoprint	},
 	{ "autotab",	"at",	BOOL,	CANSET,		o_autotab	},
+	{ "expandtab",	"at",	BOOL,	CANSET,		o_expandtab	},
 	{ "autowrite",	"aw",	BOOL,	CANSET|UNSAFE,	o_autowrite	},
 #ifndef CRUNCH
 	{ "beautify",	"bf",	BOOL,	CANSET,		o_beautify	},
