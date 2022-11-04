@@ -105,6 +105,7 @@ extern struct _viflags
 extern char	o_autoindent[1];
 extern char	o_autoprint[1];
 extern char	o_autotab[1];
+extern char	o_expandtab[1];
 extern char	o_autowrite[1];
 extern char	o_columns[3];
 extern char	o_directory[30];
